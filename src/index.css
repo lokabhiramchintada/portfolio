@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-neutral-100 overflow-x-hidden;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-light rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-700;
+}
+
+.neon-border {
+  @apply relative z-10 overflow-hidden;
+}
+
+.neon-border::before {
+  content: '';
+  @apply absolute -z-10 inset-0 rounded-lg p-[2px];
+  background: linear-gradient(
+    45deg, 
+    theme('colors.primary.DEFAULT'), 
+    theme('colors.secondary.DEFAULT'), 
+    theme('colors.accent.DEFAULT'),
+    theme('colors.primary.DEFAULT')
+  );
+  background-size: 400% 400%;
+  animation: gradient-xy 15s ease infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.glass {
+  @apply bg-surface bg-opacity-50 backdrop-blur-sm border border-neutral-800;
+}
+
+.section-heading {
+  @apply text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+.neon-text {
+  @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+.skill-icon {
+  @apply w-16 h-16 rounded-lg flex items-center justify-center glass card-hover mx-auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.project-card {
+  @apply glass rounded-lg overflow-hidden card-hover p-4 transition-all duration-300;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.timeline-item {
+  @apply relative pl-6 pb-8;
+}
+
+.timeline-item::before {
+  content: '';
+  @apply absolute left-0 top-1 w-3 h-3 rounded-full bg-primary;
+}
+
+.timeline-item::after {
+  content: '';
+  @apply absolute left-[6px] top-4 bottom-0 w-[1px] bg-primary bg-opacity-30;
+}
+
+.timeline-item:last-child::after {
+  @apply hidden;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  @apply fixed w-6 h-6 rounded-full pointer-events-none z-50 mix-blend-difference;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.custom-cursor.hover {
+  @apply w-12 h-12 bg-primary bg-opacity-20;
+}
