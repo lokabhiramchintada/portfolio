@@ -41,7 +41,7 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/lokabhiramchintada/portfolio
 cd portfolio
 ```
 
@@ -315,9 +315,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Lokabhiram Chintada**
 - Email: lokabhiram.ucen@gmail.com
-- Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- Portfolio: lokabhiram.tech
+- LinkedIn: https://www.linkedin.com/in/lokabhiram-chintada
+- GitHub: https://github.com/lokabhiramchintada
 
 ---
 
