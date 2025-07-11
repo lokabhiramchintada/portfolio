@@ -100,32 +100,32 @@ const Projects: React.FC = () => {
                 <div className="h-3 w-full bg-gradient-to-r from-primary via-secondary to-accent rounded-t-md"></div>
               </div>
               
-              <h3 className="text-xl font-semibold mb-2 text-neutral-100">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-100">{project.title}</h3>
               
               {project.grade && (
                 <p className="text-sm font-medium text-success mb-2">{project.grade}</p>
               )}
               
-              <p className="text-neutral-300 mb-4 line-clamp-3">{project.description}</p>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 line-clamp-3">{project.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, techIndex) => (
                   <span 
                     key={techIndex}
-                    className="text-xs font-medium bg-surface-light rounded-full px-2 py-1 text-neutral-300"
+                    className="text-xs font-medium bg-surface-light dark:bg-surface-light-dark rounded-full px-2 py-1 text-neutral-700 dark:text-neutral-300"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               
-              <div className="flex justify-end space-x-3 mt-auto pt-2 border-t border-neutral-800">
+              <div className="flex justify-end space-x-3 mt-auto pt-2 border-t border-neutral-200 dark:border-neutral-800">
                 {project.github && (
                   <a 
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
                   >
                     <Github size={18} />
                   </a>
@@ -136,13 +136,13 @@ const Projects: React.FC = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
                   >
                     <ExternalLink size={18} />
                   </a>
                 )}
                 
-                <span className="text-neutral-400 hover:text-primary transition-colors duration-300 cursor-pointer">
+                <span className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300 cursor-pointer">
                   <Code size={18} />
                 </span>
               </div>

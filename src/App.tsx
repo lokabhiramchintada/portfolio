@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -34,12 +35,12 @@ function App() {
   };
 
   return (
-    <>
+    <ThemeProvider>
       <CustomCursor />
       <ParticleBackground />
       
       {isLoading ? (
-        <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-background dark:bg-background-dark z-50 transition-colors duration-300">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -72,7 +73,7 @@ function App() {
           <Footer />
         </motion.div>
       )}
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -1,12 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0F',
-        surface: '#121218',
-        'surface-light': '#1E1E26',
+        background: {
+          DEFAULT: '#F5F7FA',
+          dark: '#0A0A0F',
+        },
+        surface: {
+          DEFAULT: '#E8EBF0',
+          dark: '#121218',
+        },
+        'surface-light': {
+          DEFAULT: '#F0F3F8',
+          dark: '#1E1E26',
+        },
         primary: {
           DEFAULT: '#00FFDD',
           hover: '#00E6C5',
@@ -32,15 +42,16 @@ export default {
           hover: '#E62E2E',
         },
         neutral: {
-          100: '#F2F2F7',
-          200: '#E5E5EA',
-          300: '#D1D1D6',
-          400: '#C7C7CC',
-          500: '#AEAEB2',
-          600: '#8E8E93',
-          700: '#636366',
-          800: '#3A3A3C',
-          900: '#2C2C2E',
+          100: '#E8EAED',
+          200: '#D1D5DB',
+          300: '#9CA3AF',
+          400: '#6B7280',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+          950: '#030712',
         },
       },
       fontFamily: {

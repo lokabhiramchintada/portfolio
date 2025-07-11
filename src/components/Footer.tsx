@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-12 glass bg-surface bg-opacity-90">
+    <footer className="py-12 glass bg-surface dark:bg-surface-dark bg-opacity-90 dark:bg-opacity-90">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div>
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               Lokabhiram Chintada
             </h2>
             
-            <p className="text-neutral-400 mt-2">
+            <p className="text-neutral-600 dark:text-neutral-400 mt-2">
               Software Engineer, Data Scientist and AI Enthusiast
             </p>
             
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
                 href="https://github.com/lokabhiram-chintada"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               >
                 <Github size={20} />
               </a>
@@ -36,14 +36,14 @@ const Footer: React.FC = () => {
                 href="https://linkedin.com/in/lokabhiram-chintada"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               >
                 <Linkedin size={20} />
               </a>
               
               <a 
-                href="mailto:lokabhiram@outlook.com"
-                className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                href="mailto:lokabhiram.ucen@gmail.com"
+                className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               >
                 <Mail size={20} />
               </a>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                 href="https://lokabhiram.tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 hover:text-primary transition-colors duration-300"
+                className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               >
                 <Globe size={20} />
               </a>
@@ -62,13 +62,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-start md:items-end">
             <button 
               onClick={scrollToTop}
-              className="flex items-center text-neutral-400 hover:text-primary transition-colors duration-300"
+              className="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
             >
               <span className="mr-2">Back to top</span>
               <ArrowUp size={16} />
             </button>
             
-            <p className="text-neutral-500 text-sm mt-4">
+            <p className="text-neutral-500 dark:text-neutral-500 text-sm mt-4">
               © {new Date().getFullYear()} Lokabhiram Chintada. All rights reserved.
             </p>
           </div>

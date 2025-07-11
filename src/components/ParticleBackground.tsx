@@ -2,8 +2,11 @@ import React, { useCallback } from 'react';
 import Particles from 'react-particles';
 import type { Container, Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
+import { useTheme } from '../contexts/ThemeContext';
 
 const ParticleBackground: React.FC = () => {
+  const { isDark } = useTheme();
+  
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
@@ -49,13 +52,13 @@ const ParticleBackground: React.FC = () => {
         },
         particles: {
           color: {
-            value: ['#00FFDD', '#FF2CDF', '#BD00FF'],
+            value: isDark ? ['#00FFDD', '#FF2CDF', '#BD00FF'] : ['#00FFDD', '#FF2CDF', '#BD00FF'],
           },
           links: {
-            color: '#4D4D4D',
+            color: isDark ? '#4D4D4D' : '#C0C4CC',
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: isDark ? 0.2 : 0.08,
             width: 1,
           },
           collisions: {
@@ -79,7 +82,7 @@ const ParticleBackground: React.FC = () => {
             value: 80,
           },
           opacity: {
-            value: 0.4,
+            value: isDark ? 0.4 : 0.2,
           },
           shape: {
             type: 'circle',

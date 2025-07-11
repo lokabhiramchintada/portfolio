@@ -86,10 +86,10 @@ const Education: React.FC = () => {
                 <GraduationCap size={24} className="text-primary" />
               </div>
               
-              <h3 className="text-xl font-semibold text-center mb-2 text-neutral-100">{education.degree}</h3>
+              <h3 className="text-xl font-semibold text-center mb-2 text-neutral-800 dark:text-neutral-100">{education.degree}</h3>
               <p className="text-center text-primary font-medium mb-2">{education.institution}</p>
-              <p className="text-center text-neutral-400 text-sm mb-4">{education.period}</p>
-              <p className="text-neutral-300 text-center">{education.description}</p>
+              <p className="text-center text-neutral-600 dark:text-neutral-400 text-sm mb-4">{education.period}</p>
+              <p className="text-neutral-700 dark:text-neutral-300 text-center">{education.description}</p>
             </motion.div>
           ))}
         </div>
@@ -107,7 +107,7 @@ const Education: React.FC = () => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-full px-4 py-2 text-neutral-300"
+                className="glass rounded-full px-4 py-2 text-neutral-700 dark:text-neutral-300"
               >
                 {certification}
               </motion.div>

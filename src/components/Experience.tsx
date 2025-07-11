@@ -97,15 +97,15 @@ const Experience: React.FC = () => {
               <div className="glass rounded-lg p-6 border-l-4 border-primary">
                 <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
                   <h3 className="text-xl font-semibold text-primary">{experience.title}</h3>
-                  <span className="text-neutral-400 text-sm mt-1 sm:mt-0">{experience.period}</span>
+                  <span className="text-neutral-600 dark:text-neutral-400 text-sm mt-1 sm:mt-0">{experience.period}</span>
                 </div>
                 
                 <div className="mb-4">
-                  <p className="text-lg font-medium text-neutral-200">{experience.company}</p>
-                  <p className="text-neutral-400 text-sm">{experience.location}</p>
+                  <p className="text-lg font-medium text-neutral-800 dark:text-neutral-200">{experience.company}</p>
+                  <p className="text-neutral-600 dark:text-neutral-400 text-sm">{experience.location}</p>
                 </div>
                 
-                <ul className="list-disc pl-5 space-y-2 text-neutral-300">
+                <ul className="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300">
                   {experience.description.map((point, idx) => (
                     <li key={idx}>{point}</li>
                   ))}

@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -22,21 +23,39 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Reset success message after a delay
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        setSubmitError(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitError('Network error. Please check if the server is running and try again.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after a delay
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+    }
   };
 
   const containerVariants = {
@@ -75,40 +94,40 @@ const Contact: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-semibold mb-6 text-neutral-100">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100">Contact Information</h3>
             
             <div className="glass rounded-lg p-6">
               <div className="flex items-start mb-6">
-                <div className="p-3 rounded-lg bg-surface-light mr-4">
+                <div className="p-3 rounded-lg bg-surface-light dark:bg-surface-light-dark mr-4">
                   <Mail size={24} className="text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-neutral-100">Email</h4>
-                  <a href="mailto:lokabhiram@outlook.com" className="text-neutral-400 hover:text-primary transition-colors duration-300">
-                    lokabhiram@outlook.com
+                  <h4 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Email</h4>
+                  <a href="mailto:lokabhiram@outlook.com" className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300">
+                    lokabhiram.ucen@gmail.com
                   </a>
                 </div>
               </div>
               
               <div className="flex items-start mb-6">
-                <div className="p-3 rounded-lg bg-surface-light mr-4">
+                <div className="p-3 rounded-lg bg-surface-light dark:bg-surface-light-dark mr-4">
                   <Phone size={24} className="text-secondary" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-neutral-100">Phone</h4>
-                  <a href="tel:+917673989061" className="text-neutral-400 hover:text-primary transition-colors duration-300">
+                  <h4 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Phone</h4>
+                  <a href="tel:+917673989061" className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300">
                     +91 7673989061
                   </a>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="p-3 rounded-lg bg-surface-light mr-4">
+                <div className="p-3 rounded-lg bg-surface-light dark:bg-surface-light-dark mr-4">
                   <MapPin size={24} className="text-accent" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-neutral-100">Location</h4>
-                  <p className="text-neutral-400">
+                  <h4 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Location</h4>
+                  <p className="text-neutral-600 dark:text-neutral-400">
                     Hyderabad, India
                   </p>
                 </div>
@@ -117,11 +136,11 @@ const Contact: React.FC = () => {
           </motion.div>
           
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-semibold mb-6 text-neutral-100">Send Message</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100">Send Message</h3>
             
             <form onSubmit={handleSubmit} className="glass rounded-lg p-6">
               <div className="mb-4">
-                <label htmlFor="name" className="block text-neutral-300 mb-2">
+                <label htmlFor="name" className="block text-neutral-700 dark:text-neutral-300 mb-2">
                   Name
                 </label>
                 <input
@@ -130,13 +149,13 @@ const Contact: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full bg-surface-light rounded-lg p-3 text-neutral-100 border border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300`}
+                  className={`w-full bg-surface-light dark:bg-surface-light-dark rounded-lg p-3 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300`}
                   required
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="email" className="block text-neutral-300 mb-2">
+                <label htmlFor="email" className="block text-neutral-700 dark:text-neutral-300 mb-2">
                   Email
                 </label>
                 <input
@@ -145,13 +164,13 @@ const Contact: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full bg-surface-light rounded-lg p-3 text-neutral-100 border border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300`}
+                  className={`w-full bg-surface-light dark:bg-surface-light-dark rounded-lg p-3 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300`}
                   required
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block text-neutral-300 mb-2">
+                <label htmlFor="message" className="block text-neutral-700 dark:text-neutral-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -160,7 +179,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className={`w-full bg-surface-light rounded-lg p-3 text-neutral-100 border border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300 resize-none`}
+                  className={`w-full bg-surface-light dark:bg-surface-light-dark rounded-lg p-3 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 ${inputFocusClasses} focus:outline-none transition-all duration-300 resize-none`}
                   required
                 ></textarea>
               </div>
@@ -168,7 +187,7 @@ const Contact: React.FC = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-background font-medium transition-all duration-300 relative overflow-hidden group flex items-center justify-center"
+                className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-medium transition-all duration-300 relative overflow-hidden group flex items-center justify-center"
                 whileHover={{ scale: 1.02, boxShadow: '0 0 15px rgba(0, 255, 221, 0.5)' }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -183,9 +202,19 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 p-3 rounded-lg bg-success bg-opacity-20 text-success text-center"
+                  className="mt-4 p-3 rounded-lg bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-center"
                 >
-                  Message sent successfully!
+                  Message sent successfully! Check your email for confirmation.
+                </motion.div>
+              )}
+              
+              {submitError && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-3 rounded-lg bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 text-center"
+                >
+                  {submitError}
                 </motion.div>
               )}
             </form>

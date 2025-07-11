@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             />
           </h2>
           
-          <p className="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
             Research Software Intern at IIIT Hyderabad with expertise in machine learning,
             computer vision, and full-stack development. Building innovative solutions 
             with a focus on real-world impact.
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
             <motion.a
               href="#contact"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-background font-medium transition-transform duration-300 hover:scale-105"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium transition-transform duration-300 hover:scale-105"
               whileHover={{ boxShadow: '0 0 15px rgba(0, 255, 221, 0.5)' }}
               whileTap={{ scale: 0.98 }}
             >
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
               href="https://github.com/lokabhiram-chintada"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-primary transition-colors duration-300"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               whileHover={{ y: -5 }}
             >
               <Github size={24} />
@@ -86,15 +86,15 @@ const Hero: React.FC = () => {
               href="https://linkedin.com/in/lokabhiram-chintada"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-primary transition-colors duration-300"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               whileHover={{ y: -5 }}
             >
               <Linkedin size={24} />
             </motion.a>
             
             <motion.a
-              href="mailto:lokabhiram@outlook.com"
-              className="text-neutral-400 hover:text-primary transition-colors duration-300"
+              href="mailto:lokabhiram.ucen@gmail.com"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               whileHover={{ y: -5 }}
             >
               <Mail size={24} />
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
               href="https://lokabhiram.tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-primary transition-colors duration-300"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               whileHover={{ y: -5 }}
             >
               <Globe size={24} />
@@ -122,16 +122,12 @@ const Hero: React.FC = () => {
             {/* Animated border effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent opacity-75 blur-md animate-pulse-slow"></div>
             
-            <div className="absolute inset-2 rounded-full bg-background"></div>
+            <div className="absolute inset-2 rounded-full bg-background dark:bg-background-dark"></div>
             
             <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20">
               {/* Profile photo would go here - using a placeholder */}
               <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-white">
-                <img
-                  src="https://res.cloudinary.com/duld0gqqe/image/upload/v1747859380/1_ca4hhl.jpg"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
+                LC
               </div>
             </div>
           </div>
@@ -140,7 +136,7 @@ const Hero: React.FC = () => {
       
       <motion.button
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-neutral-400 hover:text-primary transition-colors duration-300"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

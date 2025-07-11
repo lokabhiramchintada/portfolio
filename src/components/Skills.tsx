@@ -86,17 +86,17 @@ const Skills: React.FC = () => {
               className="glass rounded-lg p-6 card-hover"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 rounded-lg bg-surface-light mr-3">
+                <div className="p-3 rounded-lg bg-surface-light dark:bg-surface-light-dark mr-3">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-100">{category.title}</h3>
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{category.title}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.span
                     key={skillIndex}
-                    className="px-3 py-1 rounded-full bg-surface-light text-neutral-300 text-sm"
+                    className="px-3 py-1 rounded-full bg-surface-light dark:bg-surface-light-dark text-neutral-700 dark:text-neutral-300 text-sm"
                     whileHover={{
                       backgroundColor: 'rgba(0, 255, 221, 0.1)',
                       color: '#00FFDD',
@@ -120,16 +120,24 @@ const Skills: React.FC = () => {
           </h3>
           
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-            {/* Technology icons would go here */}
-            {Array.from({ length: 8 }).map((_, index) => (
+            {[
+              { name: 'Python', icon: '🐍' },
+              { name: 'PyTorch', icon: '🔥' },
+              { name: 'React', icon: '⚛️' },
+              { name: 'Flask', icon: '🌶️' },
+              { name: 'Docker', icon: '🐳' },
+              { name: 'Git', icon: '📝' },
+              { name: 'Linux', icon: '🐧' },
+              { name: 'AI/ML', icon: '🤖' }
+            ].map((tech, index) => (
               <motion.div
                 key={index}
                 className="skill-icon"
                 whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 255, 221, 0.1)' }}
+                title={tech.name}
               >
-                {/* Placeholder for tech icon */}
-                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                  {String.fromCharCode(65 + index)}
+                <span className="text-2xl">
+                  {tech.icon}
                 </span>
               </motion.div>
             ))}

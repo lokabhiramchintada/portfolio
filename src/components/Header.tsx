@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,7 @@ const Header: React.FC = () => {
       animate="visible"
       transition={{ duration: 0.5, delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background bg-opacity-80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-5'
+        isScrolled ? 'bg-background dark:bg-background-dark bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
@@ -71,34 +72,37 @@ const Header: React.FC = () => {
           href="#home"
           className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent"
         >
-          <img
-            src="https://res.cloudinary.com/duld0gqqe/image/upload/v1747859380/1_ca4hhl.jpg" // Update this path to your image
-            alt="Logo"
-            className="w-10 h-10 object-cover rounded-full"
-          />
+          LC
         </a>
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-neutral-300 hover:text-primary transition-colors duration-300 font-medium relative group"
+                className="text-neutral-600 dark:text-neutral-300 hover:text-primary transition-colors duration-300 font-medium relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
-        </nav>
+          </nav>
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Navigation Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-neutral-300 hover:text-primary transition-colors duration-300"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-neutral-600 dark:text-neutral-300 hover:text-primary transition-colors duration-300"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -117,7 +121,7 @@ const Header: React.FC = () => {
               variants={itemVariants}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-neutral-300 hover:text-primary transition-colors duration-300 py-2 font-medium"
+              className="text-neutral-600 dark:text-neutral-300 hover:text-primary transition-colors duration-300 py-2 font-medium"
             >
               {link.name}
             </motion.a>

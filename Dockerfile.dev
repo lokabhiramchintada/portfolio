@@ -1,0 +1,28 @@
+# Development Dockerfile for Frontend
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies for building native modules
+RUN apk add --no-cache python3 make g++
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including devDependencies)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Expose port for Vite dev server
+EXPOSE 5173
+
+# Add labels
+LABEL maintainer="Lokabhiram Chintada <lokabhiram.ucen@gmail.com>"
+LABEL description="Portfolio website frontend - Development"
+LABEL version="1.0.0-dev"
+
+# Start development server
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
