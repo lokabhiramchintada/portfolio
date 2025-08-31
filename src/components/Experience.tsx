@@ -11,11 +11,21 @@ interface ExperienceItem {
 }
 
 const experienceData: ExperienceItem[] = [
+
+    {
+    title: "Research Assistant",
+    company: "International Institute of Information Technology Hyderabad",
+    location: "Hyderabad",
+    period: "July 2025 - Present",
+    description: [
+      "Research on Waste Management using Computer Vision."
+    ]
+  },
   {
     title: "Research Software Intern",
     company: "International Institute of Information Technology Hyderabad",
     location: "Hyderabad",
-    period: "January 2024 - Present",
+    period: "January 2024 - July 2025",
     description: [
       "Developed a real-time crowd monitoring system using PyTorch with features like human detection, people counting, loitering and fall detection, fighting and unusual pose recognition, and emergency alerting.",
       "Integrated heatmap-based density estimation, overcrowding detection, and threat prediction for proactive incident response in high-density areas.",
@@ -25,6 +35,7 @@ const experienceData: ExperienceItem[] = [
       "Implemented IoT solutions with BLE sensors and MQTT protocol for real-time monitoring and automation of home appliances."
     ]
   },
+
   {
     title: "Telecommunications Intern",
     company: "Bharat Sanchar Nigam Limited",

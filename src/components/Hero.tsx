@@ -30,13 +30,13 @@ const Hero: React.FC = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-neutral-300">
             <TypeAnimation
               sequence={[
-                'Software Engineer',
+                'Research Scholar',
                 1000,
-                'Data Scientist',
+                'ML Engineer',
                 1000,
                 'AI Enthusiast',
                 1000,
-                'ML Engineer',
+                'Software Engineer',
                 1000,
               ]}
               wrapper="span"
@@ -46,9 +46,7 @@ const Hero: React.FC = () => {
           </h2>
           
           <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
-            Research Software Intern at IIIT Hyderabad with expertise in machine learning,
-            computer vision, and full-stack development. Building innovative solutions 
-            with a focus on real-world impact.
+            Now I am pursuing MS by Research from IIIT Hyderabad. My research work is in Computer Vision, ML, and IoT.
           </p>
           
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">

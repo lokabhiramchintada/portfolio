@@ -73,7 +73,7 @@ const Education: React.FC = () => {
         animate={inView ? "visible" : "hidden"}
         className="container mx-auto px-4 sm:px-6"
       >
-        <h2 className="section-heading text-center">Education & Certifications</h2>
+        <h2 className="section-heading text-center">Education</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
           {educationData.map((education, index) => (

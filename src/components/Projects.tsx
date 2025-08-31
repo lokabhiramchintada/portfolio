@@ -18,25 +18,29 @@ const projectsData: Project[] = [
     title: "System Threat Forecaster",
     description: "Built a machine learning pipeline to predict probabilities of malware infection using telemetry features. Conducted EDA, handled missing values, encoded categorical variables, and applied SMOTE to class imbalance. Trained multiple models and achieved high ROC-AUC.",
     technologies: ["Machine Learning", "Python", "Random Forest", "LightGBM", "AdaBoost"],
-    grade: "Grade: S (IIT Madras)"
+    grade: "Grade: S (IIT Madras)",
+    github: "https://github.com/lokabhiramchintada/System-Threat-Forecaster"
   },
   {
     title: "Household Services Application",
     description: "Designed a multi-user home servicing platform using Flask, SQLite, VueJS, and Redis. Implemented Celery job scheduling and improved system performance through Redis caching. Managed real-time status updates, role-based access, and fault-tolerant backend integration.",
     technologies: ["Flask", "VueJS", "SQLite", "Redis", "Celery"],
-    grade: "Grade: S (IIT Madras)"
+    grade: "Grade: S (IIT Madras)",
+    github: "https://github.com/lokabhiramchintada/mad2pjan2025"
   },
   {
     title: "Influencer Engagement Platform",
     description: "Created a role-based marketing platform using Flask, Jinja2, Bootstrap and SQLite, connecting sponsors with influencers. Included complete campaign lifecycle management with admin dashboards and campaign analytics.",
     technologies: ["Flask", "Jinja2", "Bootstrap", "SQLite"],
-    grade: "Grade: S (IIT Madras)"
+    grade: "Grade: S (IIT Madras)",
+    github: "https://github.com/lokabhiramchintada/Influencer_Marketing_Platform"
   },
   {
     title: "Fire Detection and Personnel Accountability System",
     description: "Built a real-time fire detection and human accountability system using PyTorch, MobileNetSSD, and LSTM networks. The system triggers alarms and sends alerts during emergency scenarios.",
     technologies: ["PyTorch", "MobileNetSSD", "LSTM", "Computer Vision"],
-    grade: "Grade: A+ (JNTUK)"
+    grade: "Grade: A+ (JNTUK)",
+    github: "https://github.com/lokabhiramchintada/Integrated-Fire-Detection-and-Personnel-Accountability-System"
   },
   {
     title: "Engage2Value – From Clicks to Conversions",
@@ -120,17 +124,6 @@ const Projects: React.FC = () => {
               </div>
               
               <div className="flex justify-end space-x-3 mt-auto pt-2 border-t border-neutral-200 dark:border-neutral-800">
-                {project.github && (
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
-                  >
-                    <Github size={18} />
-                  </a>
-                )}
-                
                 {project.link && (
                   <a 
                     href={project.link}
@@ -141,10 +134,16 @@ const Projects: React.FC = () => {
                     <ExternalLink size={18} />
                   </a>
                 )}
-                
-                <span className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300 cursor-pointer">
-                  <Code size={18} />
-                </span>
+                {project.github && (
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
+                  >
+                    <Code size={18} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
