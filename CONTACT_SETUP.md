@@ -53,7 +53,7 @@ npm run dev
 
 1. Open your portfolio at `http://localhost:5173`
 2. Fill out the contact form
-3. You should receive an email at `lokabhiram.ucen@gmail.com`
+3. You should receive an email at `lokabhiram@outlook.com`
 4. The sender will receive an auto-reply confirmation
 
 ## Email Features

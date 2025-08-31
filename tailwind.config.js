@@ -6,15 +6,15 @@ export default {
     extend: {
       colors: {
         background: {
-          DEFAULT: '#F5F7FA',
+          DEFAULT: '#F3F4F6', // softer off-white
           dark: '#0A0A0F',
         },
         surface: {
-          DEFAULT: '#E8EBF0',
+          DEFAULT: '#E2E6EA', // slightly darker, less bright
           dark: '#121218',
         },
         'surface-light': {
-          DEFAULT: '#F0F3F8',
+          DEFAULT: '#E9ECEF', // less bright
           dark: '#1E1E26',
         },
         primary: {
@@ -26,8 +26,8 @@ export default {
           hover: '#E61AC7',
         },
         accent: {
-          DEFAULT: '#BD00FF',
-          hover: '#A500E0',
+          DEFAULT: '#0099FF', // blue
+          hover: '#0077CC',   // darker blue
         },
         success: {
           DEFAULT: '#00FF9D',
@@ -42,16 +42,16 @@ export default {
           hover: '#E62E2E',
         },
         neutral: {
-          100: '#E8EAED',
+          100: '#E2E6EA', // lighter gray for backgrounds
           200: '#D1D5DB',
           300: '#9CA3AF',
-          400: '#6B7280',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
-          950: '#030712',
+          400: '#4B5563', // darker for text
+          500: '#374151', // darker for text
+          600: '#1F2937',
+          700: '#111827',
+          800: '#0A0A0F',
+          900: '#030712',
+          950: '#000000',
         },
       },
       fontFamily: {

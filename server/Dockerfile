@@ -38,7 +38,7 @@ USER nodejs
 EXPOSE 3001
 
 # Add labels for better maintainability
-LABEL maintainer="Lokabhiram Chintada <lokabhiram.ucen@gmail.com>"
+LABEL maintainer="Lokabhiram Chintada <lokabhiram@outlook.com>"
 LABEL description="Portfolio website backend server"
 LABEL version="1.0.0"
 

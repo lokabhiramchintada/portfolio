@@ -20,7 +20,7 @@ COPY . .
 EXPOSE 5173
 
 # Add labels
-LABEL maintainer="Lokabhiram Chintada <lokabhiram.ucen@gmail.com>"
+LABEL maintainer="Lokabhiram Chintada <lokabhiram@outlook.com>"
 LABEL description="Portfolio website frontend - Development"
 LABEL version="1.0.0-dev"
 

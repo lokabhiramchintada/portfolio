@@ -20,8 +20,8 @@ const createTransporter = () => {
   return nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD
+      user: 'abhisigningin@gmail.com',
+      pass: 'vruixxbhyqfqspcl'
     }
   });
 };
@@ -43,8 +43,8 @@ app.post('/api/contact', async (req, res) => {
 
     // Email to you (recipient)
     const mailToRecipient = {
-      from: process.env.GMAIL_USER,
-      to: 'lokabhiram.ucen@gmail.com',
+      from: 'abhisigningin@gmail.com',
+      to: 'lokabhiram@outlook.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -95,14 +95,14 @@ app.post('/api/contact', async (req, res) => {
           </div>
           
           <p style="color: #555; line-height: 1.6;">
-            I typically respond within 24-48 hours. If you have any urgent questions, feel free to reach out to me directly at lokabhiram.ucen@gmail.com.
+            I typically respond within 24-48 hours. If you have any urgent questions, feel free to reach out to me directly at lokabhiram@outlook.com.
           </p>
           
           <div style="margin-top: 30px; padding: 20px; background-color: #e8f4fd; border-radius: 8px;">
             <p style="margin: 0; color: #555;">
               Best regards,<br>
               <strong>Lokabhiram</strong><br>
-              <a href="mailto:lokabhiram.ucen@gmail.com" style="color: #007acc;">lokabhiram.ucen@gmail.com</a>
+              <a href="mailto:lokabhiram@outlook.com" style="color: #007acc;">lokabhiram@outlook.com</a>
             </p>
           </div>
         </div>

@@ -11,6 +11,12 @@ interface EducationItem {
 }
 
 const educationData: EducationItem[] = [
+    {
+    degree: "Master of Science by Research in Electronics and Communication Engineering",
+    institution: "International Institute of Information Technology Hyderabad",
+    period: "July 2025 - Present",
+    description: "Key Subjects: Advanced Machine Learning, Research Methodologies, Signal Processing, and Advanced Communication Systems."
+  },
   {
     degree: "Bachelor of Science in Data Science",
     institution: "Indian Institute of Technology Madras",
@@ -22,12 +28,6 @@ const educationData: EducationItem[] = [
     institution: "Jawaharlal Nehru Technological University Kakinada",
     period: "January 2021 - April 2024",
     description: "Key Subjects: Image Processing, Communication Systems, Electronics, Microprocessors and Controllers, and VLSI."
-  },
-  {
-    degree: "Diploma in Programming",
-    institution: "Indian Institute of Technology Madras",
-    period: "May 2022 - December 2024",
-    description: "Key Subjects: Web Application Development, Data Structures, System Commands, Database Management Systems, JAVA."
   }
 ];
 

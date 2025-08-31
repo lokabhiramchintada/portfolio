@@ -70,7 +70,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <a 
           href="#home"
-          className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent"
+          className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
         >
           LC
         </a>

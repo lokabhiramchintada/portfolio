@@ -52,10 +52,10 @@ const ParticleBackground: React.FC = () => {
         },
         particles: {
           color: {
-            value: isDark ? ['#00FFDD', '#FF2CDF', '#BD00FF'] : ['#00FFDD', '#FF2CDF', '#BD00FF'],
+            value: isDark ? ['#00FFDD', '#0099FF'] : ['#00FFDD', '#0099FF'],
           },
           links: {
-            color: isDark ? '#4D4D4D' : '#C0C4CC',
+            color: isDark ? '#0099FF' : '#0099FF',
             distance: 150,
             enable: true,
             opacity: isDark ? 0.2 : 0.08,

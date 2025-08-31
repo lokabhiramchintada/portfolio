@@ -52,7 +52,7 @@ html {
 }
 
 .section-heading {
-  @apply text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
+  @apply text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x;
 }
 
 .card-hover {
@@ -60,7 +60,7 @@ html {
 }
 
 .neon-text {
-  @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
+  @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x;
 }
 
 @layer utilities {

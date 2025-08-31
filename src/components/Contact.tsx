@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Email</h4>
                   <a href="mailto:lokabhiram@outlook.com" className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300">
-                    lokabhiram.ucen@gmail.com
+                    lokabhiram@outlook.com
                   </a>
                 </div>
               </div>

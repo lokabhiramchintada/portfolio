@@ -49,7 +49,7 @@ function App() {
               repeatType: "reverse",
               duration: 1,
             }}
-            className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x"
+            className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x"
           >
             Loading...
           </motion.div>

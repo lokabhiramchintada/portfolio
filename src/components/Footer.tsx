@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div>
-            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               Lokabhiram Chintada
             </h2>
             
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               </a>
               
               <a 
-                href="mailto:lokabhiram.ucen@gmail.com"
+                href="mailto:lokabhiram@outlook.com"
                 className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               >
                 <Mail size={20} />

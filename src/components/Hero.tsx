@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Hi, I'm{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x">
               Lokabhiram Chintada
             </span>
           </h1>
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             </motion.a>
             
             <motion.a
-              href="mailto:lokabhiram.ucen@gmail.com"
+              href="mailto:lokabhiram@outlook.com"
               className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"
               whileHover={{ y: -5 }}
             >
@@ -120,14 +120,18 @@ const Hero: React.FC = () => {
         >
           <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full mx-auto relative">
             {/* Animated border effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent opacity-75 blur-md animate-pulse-slow"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-accent opacity-75 blur-md animate-pulse-slow"></div>
             
             <div className="absolute inset-2 rounded-full bg-background dark:bg-background-dark"></div>
             
-            <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20">
+            <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-r from-primary/20 to-accent/20">
               {/* Profile photo would go here - using a placeholder */}
-              <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-white">
-                LC
+              <div className="w-full h-full flex items-center justify-center">
+                <img
+                  src="/abhi.jpg"
+                  alt="Abhi"
+                  className="object-cover w-full h-full"
+                />
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 3000
 
 # Add labels for better maintainability
-LABEL maintainer="Lokabhiram Chintada <lokabhiram.ucen@gmail.com>"
+LABEL maintainer="Lokabhiram Chintada <lokabhiram@outlook.com>"
 LABEL description="Portfolio website frontend"
 LABEL version="1.0.0"
 

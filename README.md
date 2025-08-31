@@ -314,7 +314,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Lokabhiram Chintada**
-- Email: lokabhiram.ucen@gmail.com
+- Email: lokabhiram@outlook.com
 - Portfolio: lokabhiram.tech
 - LinkedIn: https://www.linkedin.com/in/lokabhiram-chintada
 - GitHub: https://github.com/lokabhiramchintada

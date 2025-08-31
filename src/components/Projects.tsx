@@ -97,7 +97,7 @@ const Projects: React.FC = () => {
               }}
             >
               <div className="relative overflow-hidden mb-4">
-                <div className="h-3 w-full bg-gradient-to-r from-primary via-secondary to-accent rounded-t-md"></div>
+                <div className="h-3 w-full bg-gradient-to-r from-primary to-accent rounded-t-md"></div>
               </div>
               
               <h3 className="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-100">{project.title}</h3>
