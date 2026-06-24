@@ -24,12 +24,12 @@ const competitions = [
   },
   {
     result: 'Finalist',
-    event: 'Demos - SparQ2025',
+    event: 'Demos - SparQ2026',
     organizer: 'Qualcomm',
   },
   {
     result: 'Finalist',
-    event: 'Demos - SparQ2026',
+    event: 'Demos - SparQ2025',
     organizer: 'Qualcomm',
   },
   {
