@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
             </button>
             
             <p className="text-neutral-500 dark:text-neutral-500 text-sm mt-4">
-              © {new Date().getFullYear()} Lokabhiram Chintada. All rights reserved.
+              Copyright {new Date().getFullYear()} Lokabhiram Chintada. All rights reserved.
             </p>
           </div>
         </div>

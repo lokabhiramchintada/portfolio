@@ -24,6 +24,7 @@ const Header: React.FC = () => {
     { name: 'Home', href: '#home' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Education', href: '#education' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
@@ -64,7 +65,7 @@ const Header: React.FC = () => {
       animate="visible"
       transition={{ duration: 0.5, delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background dark:bg-background-dark bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-5'
+        isScrolled ? 'bg-background/90 dark:bg-background-dark/90 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
@@ -72,20 +73,19 @@ const Header: React.FC = () => {
           href="#home"
           className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
         >
-          LC
+          Lokabhiram
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <nav className="flex space-x-8">
+        <div className="hidden lg:flex items-center gap-5">
+          <nav className="flex items-center gap-1 rounded-full glass px-2 py-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-                className="text-neutral-600 dark:text-neutral-300 hover:text-primary transition-colors duration-300 font-medium relative group"
+                className="rounded-full px-3 py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:bg-primary/10 hover:text-primary transition-colors duration-300 font-medium"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
           </nav>
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Navigation Button */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="lg:hidden flex items-center space-x-4">
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
         variants={navVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className={`md:hidden absolute top-full left-0 right-0 glass py-4 ${
+        className={`lg:hidden absolute top-full left-0 right-0 glass py-4 ${
           isOpen ? 'block' : 'hidden'
         }`}
       >

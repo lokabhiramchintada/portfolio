@@ -18,7 +18,10 @@ const experienceData: ExperienceItem[] = [
     location: "Hyderabad",
     period: "July 2025 - Present",
     description: [
-      "Research on Waste Management using Computer Vision."
+      "Research on waste management, smart cities, Edge AI, and IoT using computer vision.",
+      "Exploring SLM based smart-city assistants, including an edge SLM based chatbot for smart cities.",
+      "Working on Qualcomm Edge AI projects such as crowd monitoring at the edge and SLMs for smart cities.",
+      "Developing crowd monitoring, smart building automation, and digital twin workflows for public-space intelligence."
     ]
   },
   {
@@ -32,7 +35,7 @@ const experienceData: ExperienceItem[] = [
       "Developed a system combining RGB and thermal IR cameras to classify waste into wet, dry, and mixed categories.",
       "Enabled detection of wet waste inside plastic bags, paper, and plastic containers using multimodal data fusion techniques.",
       "Developed a monitoring system for illegal dumping sites using CNN models and time-series analysis.",
-      "Implemented IoT solutions with BLE sensors and MQTT protocol for real-time monitoring and automation of home appliances."
+      "Implemented IoT solutions with BLE sensors and MQTT protocol for real-time monitoring and smart building automation."
     ]
   },
 

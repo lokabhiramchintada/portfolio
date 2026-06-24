@@ -7,8 +7,20 @@ body {
   font-feature-settings: "ss01", "ss02", "cv01", "cv02";
 }
 
+.light body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(13, 148, 136, 0.13), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, 0.12), transparent 28%),
+    linear-gradient(135deg, #e8f1f7 0%, #f8fbfd 46%, #edf4f8 100%);
+}
+
+.dark body {
+  background: theme('colors.background.dark');
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 ::-webkit-scrollbar {
@@ -48,15 +60,42 @@ html {
 }
 
 .glass {
-  @apply bg-surface dark:bg-surface-dark bg-opacity-70 dark:bg-opacity-50 backdrop-blur-sm border border-neutral-300 dark:border-neutral-800 transition-colors duration-300;
+  @apply bg-surface/85 dark:bg-surface-dark/50 backdrop-blur-md border border-white/70 dark:border-neutral-800 transition-colors duration-300;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.dark .glass {
+  box-shadow: none;
 }
 
 .section-heading {
-  @apply text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x;
+  @apply text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x;
+}
+
+.section-kicker {
+  @apply mb-3 w-fit rounded-full bg-primary/10 dark:bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-primary;
+  box-shadow: inset 0 0 0 1px rgba(13, 148, 136, 0.14);
+}
+
+.section-subtitle {
+  @apply max-w-2xl text-neutral-600 dark:text-neutral-400 leading-relaxed;
+}
+
+.icon-badge {
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-surface-light dark:bg-surface-light-dark;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
 }
 
 .card-hover {
-  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-all duration-300 hover:-translate-y-1;
+}
+
+.light .card-hover:hover {
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.13);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 10px 30px rgba(0, 255, 221, 0.08);
 }
 
 .neon-text {
@@ -84,7 +123,7 @@ html {
 }
 
 .project-card {
-  @apply glass rounded-lg overflow-hidden card-hover p-4 transition-all duration-300;
+  @apply glass rounded-lg overflow-hidden card-hover p-5 transition-all duration-300;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
@@ -95,7 +134,7 @@ html {
 
 .timeline-item::before {
   content: '';
-  @apply absolute left-0 top-1 w-3 h-3 rounded-full bg-primary;
+  @apply absolute left-0 top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-primary/15;
 }
 
 .timeline-item::after {

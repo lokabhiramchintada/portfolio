@@ -73,7 +73,11 @@ const Education: React.FC = () => {
         animate={inView ? "visible" : "hidden"}
         className="container mx-auto px-4 sm:px-6"
       >
+        <div className="section-kicker mx-auto">Academic foundation</div>
         <h2 className="section-heading text-center">Education</h2>
+        <p className="section-subtitle mx-auto text-center">
+          Formal training across research, data science, and electronics with a strong applied AI focus.
+        </p>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
           {educationData.map((education, index) => (

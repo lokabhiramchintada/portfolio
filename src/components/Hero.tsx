@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { ChevronDown, Github, Linkedin, Mail, Globe } from 'lucide-react';
 
+const highlights = [
+  { value: '1', label: 'published patent' },
+  { value: '5+', label: 'hackathon honors' },
+  { value: 'CV, Edge AI & IoT', label: 'research focus' },
+];
+
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -12,7 +18,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" ref={sectionRef} className="min-h-screen flex flex-col justify-center items-center pt-20 relative">
+    <section id="home" ref={sectionRef} className="min-h-screen flex flex-col justify-center items-center pt-24 relative">
       <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-10">
         <motion.div 
           className="lg:w-3/5 text-center lg:text-left"
@@ -20,14 +26,18 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+          <p className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-5">
+            MS by Research @ IIIT Hyderabad
+          </p>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
             Hi, I'm{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent animate-gradient-x">
               Lokabhiram Chintada
             </span>
           </h1>
           
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-neutral-300">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-neutral-700 dark:text-neutral-300">
             <TypeAnimation
               sequence={[
                 'Research Scholar',
@@ -45,18 +55,18 @@ const Hero: React.FC = () => {
             />
           </h2>
           
-          <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
-            Now I am pursuing MS by Research from IIIT Hyderabad. My research work is in Computer Vision, ML, and IoT.
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            I build computer vision, Edge AI, and IoT systems for real-world monitoring problems, with current research focused on waste management, smart cities, and public-space intelligence.
           </p>
           
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
             <motion.a
-              href="#contact"
+              href="#achievements"
               className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium transition-transform duration-300 hover:scale-105"
               whileHover={{ boxShadow: '0 0 15px rgba(0, 255, 221, 0.5)' }}
               whileTap={{ scale: 0.98 }}
             >
-              Contact Me
+              See Achievements
             </motion.a>
             
             <motion.a
@@ -68,10 +78,19 @@ const Hero: React.FC = () => {
               View Projects
             </motion.a>
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8 max-w-2xl mx-auto lg:mx-0">
+            {highlights.map((highlight) => (
+              <div key={highlight.label} className="rounded-lg glass px-4 py-3 text-center lg:text-left">
+                <p className="text-xl font-bold text-primary">{highlight.value}</p>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">{highlight.label}</p>
+              </div>
+            ))}
+          </div>
           
           <div className="flex justify-center lg:justify-start mt-8 gap-6">
             <motion.a
-              href="https://github.com/lokabhiram-chintada"
+              href="https://github.com/lokabhiramchintada"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors duration-300"

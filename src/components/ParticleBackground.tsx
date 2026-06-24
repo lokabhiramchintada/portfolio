@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-particles';
-import type { Container, Engine } from 'tsparticles-engine';
+import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -11,15 +11,10 @@ const ParticleBackground: React.FC = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    // Optional: do something when particles are loaded
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       className="fixed inset-0 -z-10"
       options={{
         background: {
@@ -52,13 +47,13 @@ const ParticleBackground: React.FC = () => {
         },
         particles: {
           color: {
-            value: isDark ? ['#00FFDD', '#0099FF'] : ['#00FFDD', '#0099FF'],
+            value: isDark ? ['#0D9488', '#2563EB'] : ['#0D9488', '#2563EB'],
           },
           links: {
-            color: isDark ? '#0099FF' : '#0099FF',
-            distance: 150,
+            color: isDark ? '#2563EB' : '#0D9488',
+            distance: isDark ? 150 : 130,
             enable: true,
-            opacity: isDark ? 0.2 : 0.08,
+            opacity: isDark ? 0.2 : 0.06,
             width: 1,
           },
           collisions: {
@@ -79,10 +74,10 @@ const ParticleBackground: React.FC = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: isDark ? 80 : 42,
           },
           opacity: {
-            value: isDark ? 0.4 : 0.2,
+            value: isDark ? 0.4 : 0.13,
           },
           shape: {
             type: 'circle',

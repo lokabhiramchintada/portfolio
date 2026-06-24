@@ -6,32 +6,32 @@ export default {
     extend: {
       colors: {
         background: {
-          DEFAULT: '#F3F4F6', // softer off-white
+          DEFAULT: '#EEF4F8',
           dark: '#0A0A0F',
         },
         surface: {
-          DEFAULT: '#E2E6EA', // slightly darker, less bright
+          DEFAULT: '#FFFFFF',
           dark: '#121218',
         },
         'surface-light': {
-          DEFAULT: '#E9ECEF', // less bright
+          DEFAULT: '#E6EEF5',
           dark: '#1E1E26',
         },
         primary: {
-          DEFAULT: '#00FFDD',
-          hover: '#00E6C5',
+          DEFAULT: '#0D9488',
+          hover: '#0F766E',
         },
         secondary: {
-          DEFAULT: '#FF2CDF',
-          hover: '#E61AC7',
+          DEFAULT: '#7C3AED',
+          hover: '#6D28D9',
         },
         accent: {
-          DEFAULT: '#0099FF', // blue
-          hover: '#0077CC',   // darker blue
+          DEFAULT: '#2563EB',
+          hover: '#1D4ED8',
         },
         success: {
-          DEFAULT: '#00FF9D',
-          hover: '#00E68D',
+          DEFAULT: '#059669',
+          hover: '#047857',
         },
         warning: {
           DEFAULT: '#FFD600',
@@ -42,15 +42,15 @@ export default {
           hover: '#E62E2E',
         },
         neutral: {
-          100: '#E2E6EA', // lighter gray for backgrounds
-          200: '#D1D5DB',
-          300: '#9CA3AF',
-          400: '#4B5563', // darker for text
-          500: '#374151', // darker for text
-          600: '#1F2937',
-          700: '#111827',
-          800: '#0A0A0F',
-          900: '#030712',
+          100: '#F1F5F9',
+          200: '#CBD5E1',
+          300: '#94A3B8',
+          400: '#64748B',
+          500: '#475569',
+          600: '#334155',
+          700: '#1E293B',
+          800: '#0F172A',
+          900: '#020617',
           950: '#000000',
         },
       },

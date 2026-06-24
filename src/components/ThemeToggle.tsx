@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="relative p-2 rounded-full bg-surface dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-primary dark:hover:border-primary transition-all duration-300"
+      className="relative p-2 rounded-full bg-white/85 dark:bg-surface-dark border border-white/80 dark:border-neutral-700 shadow-sm hover:border-primary dark:hover:border-primary transition-all duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
